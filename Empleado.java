@@ -21,7 +21,7 @@ public class Empleado {
 
     /* prueba de mensaje alex*/
 
-
+/* prueba de Eduar Murcia */
 
     public int getFechaIngreso() {
         return fechaIngreso;
