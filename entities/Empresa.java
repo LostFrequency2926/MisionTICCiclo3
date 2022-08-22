@@ -1,3 +1,5 @@
+package entities;
+
 public class Empresa {
 
     String nombreEmpresa;
@@ -43,6 +45,29 @@ public class Empresa {
     public void setNitEmpresa(int nitEmpresa) {
         this.nitEmpresa = nitEmpresa;
     }
+
+    public static void main(String[] args){
+
+        Empresa empresa1 = new Empresa("AndesBPO", "Km 2 Via El Tambp", 5537866, 900326590);
+
+        System.out.println(empresa1.getNombreEmpresa());
+        empresa1.setNombreEmpresa("AndesBPO ver2");
+        System.out.println(empresa1.getNombreEmpresa());
+
+        System.out.println(empresa1.getDireccionEmpresa());
+        empresa1.setDireccionEmpresa("Km 4 ");
+        System.out.println(empresa1.getDireccionEmpresa());
+
+        System.out.println(empresa1.getTelefonoEmpresa());
+        empresa1.setTelefonoEmpresa(5538888);
+        System.out.println(empresa1.getTelefonoEmpresa());
+
+        System.out.println(empresa1.getNitEmpresa());
+        empresa1.setNitEmpresa(966666666);
+        System.out.println(empresa1.getNitEmpresa());
+    }
 }
+
+
 
 

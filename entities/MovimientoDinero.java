@@ -1,3 +1,5 @@
+package entities;
+
 public class MovimientoDinero {
 
     double montoMovimiento ;
@@ -33,4 +35,23 @@ public class MovimientoDinero {
     public void setUsuarioMovimiento(String usuarioMovimiento) {
         this.usuarioMovimiento = usuarioMovimiento;
     }
+
+    public static void main(String[] args){
+
+        MovimientoDinero movimiento1 = new MovimientoDinero(200000, "compra sillas", "Felipe");
+
+        System.out.println(movimiento1.getMontoMovimiento());
+        movimiento1.setMontoMovimiento(500000);
+        System.out.println(movimiento1.getMontoMovimiento());
+
+        System.out.println(movimiento1.getConceptoMovimiento());
+        movimiento1.setConceptoMovimiento("Compra refrigerios");
+        System.out.println(movimiento1.getConceptoMovimiento());
+
+        System.out.println(movimiento1.getUsuarioMovimiento());
+        movimiento1.setUsuarioMovimiento("Karen");
+        System.out.println(movimiento1.getUsuarioMovimiento());
+    }
+
+
 }
