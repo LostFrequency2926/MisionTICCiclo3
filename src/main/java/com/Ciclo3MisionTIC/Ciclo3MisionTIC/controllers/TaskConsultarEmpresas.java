@@ -1,4 +1,5 @@
 package com.Ciclo3MisionTIC.Ciclo3MisionTIC.controllers;
+import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Empleado;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,7 +8,10 @@ public class TaskConsultarEmpresas {
 
     @GetMapping("/prueba")
     public String TaskListarEmpresas(){
-        return "Test de retorno de nombre empresa";
+
+        Empleado empleado1 = new Empleado("Daniel", "dafemure.180@gmail.com", 900326590, "operario");
+
+        return empleado1.getNombreEmpleado();
     }
 
 }
