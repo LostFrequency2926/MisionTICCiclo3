@@ -33,7 +33,7 @@ public class Databaseconnection {
 
   */
 
-
+/*
             stmt = c.createStatement();
             String sql = "INSERT INTO Profile FROM information_schema.tables WHERE table_schema='public' AND table_type='BASE TABLE'(id,image,phone,users, createdAt, updatedAt) "
                     + "VALUES ('1', 'imagen perfil 1', '5537866', 'enterprise', test, test );";

@@ -7,11 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class TaskConsultarEmpresas {
 
     @GetMapping("/prueba")
+
+
+
     public String TaskListarEmpresas(){
 
         Empleado empleado1 = new Empleado("Daniel", "dafemure.180@gmail.com", 900326590, "operario");
 
-        return empleado1.getNombreEmpleado();
+        return ("Nombre empleado: " + empleado1.getNombreEmpleado() + " Correo Empleado: " + empleado1.getCorreoEmpleado());
     }
 
 }

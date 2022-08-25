@@ -41,7 +41,7 @@ public class MovimientoDinero {
         MovimientoDinero movimiento1 = new MovimientoDinero(200000, "compra sillas", "Felipe");
 
         System.out.println(movimiento1.getMontoMovimiento());
-        movimiento1.setMontoMovimiento(500000);
+        movimiento1.setMontoMovimiento(-500000);
         System.out.println(movimiento1.getMontoMovimiento());
 
         System.out.println(movimiento1.getConceptoMovimiento());
