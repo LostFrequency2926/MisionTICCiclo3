@@ -20,4 +20,9 @@ public class empleadoService {
     public List<Empleado> getListaUsuarios(){
         return this.repository.findAll();
     }
+
+    public Empleado createEmployee(Empleado empleado){
+        return this.repository.save(empleado);
+    }
+
 }

@@ -1,8 +1,5 @@
 package com.Ciclo3MisionTIC.Ciclo3MisionTIC.services;
-import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Empleado;
-import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Profile;
-import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.listaUsuarios;
-import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.listaPerfiles;
+import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.*;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.repositories.perfilesRepository;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +17,10 @@ public class perfilesService {
 
     public List<Profile> getListaPerfiles(){
         return this.repository.findAll();
+    }
+
+    public Profile createProfile(Profile perfil){
+        return this.repository.save(perfil);
     }
 
 }

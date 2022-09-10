@@ -18,4 +18,8 @@ public class movimientoService {
     public List<Transaction> getListadeMovimientos(){
         return this.repository.findAll();
     }
+
+    public Transaction createTransaction(Transaction movimiento){
+        return this.repository.save(movimiento);
+    }
 }

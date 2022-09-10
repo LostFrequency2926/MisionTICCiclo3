@@ -12,11 +12,9 @@ public class Empresa {
     private long id_empresa;
 
     @Column(name = "name")
-    @UniqueElements
     private String name;
 
     @Column(name = "document")
-    @UniqueElements
     private String document;
 
     @Column(name = "phone")

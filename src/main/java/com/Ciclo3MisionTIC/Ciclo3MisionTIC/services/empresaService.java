@@ -1,6 +1,5 @@
 package com.Ciclo3MisionTIC.Ciclo3MisionTIC.services;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Empresa;
-import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.listaEmpresas;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.repositories.empresaRepository;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +18,9 @@ public class empresaService {
 
     public List<Empresa> getListaEmpresas(){
         return this.repository.findAll();
+    }
+
+    public Empresa createEnterprise(Empresa empresa){
+        return this.repository.save(empresa);
     }
 }

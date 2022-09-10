@@ -3,6 +3,8 @@ import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Empresa;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.listaEmpresas;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.services.empresaService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -21,6 +23,10 @@ public class empresaController {
     public List<Empresa> ConsultarListaEmpresas(){
 
         return this.service.getListaEmpresas();
+    }
+    @PostMapping("/enterprises")
+    public Empresa createEnterprise(@RequestBody Empresa empresa){
+        return this.service.createEnterprise(empresa);
     }
 
 }
