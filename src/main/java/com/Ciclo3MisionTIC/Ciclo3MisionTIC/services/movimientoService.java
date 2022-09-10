@@ -1,6 +1,8 @@
 package com.Ciclo3MisionTIC.Ciclo3MisionTIC.services;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.*;
 
+import java.time.LocalDate;
+
 public class movimientoService {
     MovimientoDinero movimiento1;
     MovimientoDinero movimiento2;
@@ -8,8 +10,8 @@ public class movimientoService {
 
     public movimientoService(){
 
-        this.movimiento1 = new MovimientoDinero(4000000, "cobro facturacion", "Daniel");
-        this.movimiento2 = new MovimientoDinero(-1000000, "compra escritorio", "Felipe");
+        this.movimiento1 = new MovimientoDinero(1,"compra sillas",2000000, "Daniel", "AndesBPO", LocalDate.now(),LocalDate.now());
+        this.movimiento2 = new MovimientoDinero(1,"compra sillas",2000000, "Daniel", "AndesBPO", LocalDate.now(),LocalDate.now());
 
         this.listadeMovimientos = new listaMovimientos("Prueba de lista de movimientos");
 

@@ -2,6 +2,8 @@ package com.Ciclo3MisionTIC.Ciclo3MisionTIC.services;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Empresa;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.listaEmpresas;
 
+import java.time.LocalDate;
+
 public class empresaService {
 
     Empresa empresa1;
@@ -10,8 +12,9 @@ public class empresaService {
 
     public empresaService(){
 
-        this.empresa1 = new Empresa("Andes BPO", "km 2 via 3", 5537866, 900326590);
-        this.empresa2 = new Empresa("Ilustrar SAS", "ksnm", 32324324, 999999590);
+        this.empresa1 = new Empresa(1, "Andes", "900326590", "5537866", "km 2 Via el tambo", "Daniel", "none", LocalDate.now(),LocalDate.now());
+
+        this.empresa2 = new Empresa(1, "Andes", "900326590", "5537866", "km 2 Via el tambo", "Daniel", "none", LocalDate.now(),LocalDate.now());
 
         this.listadeEmpresas = new listaEmpresas("Prueba de lista de empresas");
 
