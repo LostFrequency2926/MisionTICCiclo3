@@ -3,28 +3,23 @@ import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Empleado;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Profile;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.listaUsuarios;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.listaPerfiles;
+import com.Ciclo3MisionTIC.Ciclo3MisionTIC.repositories.perfilesRepository;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
+@Service
 public class perfilesService {
 
-    Profile perfil1;
-    Profile perfil2;
-    listaPerfiles listaPerfiles;
+    private perfilesRepository repository;
 
-    public perfilesService(){
-
-        this.perfil1 = new Profile(1, "mail", "nan", "nan",LocalDate.now(),LocalDate.now() );
-        this.perfil2 = new Profile(1, "mail", "nan", "nan",LocalDate.now(),LocalDate.now() );
-
-        this.listaPerfiles = new listaPerfiles("Prueba de lista de perfiles");
-
-        listaPerfiles.addPerfil(perfil1);
-        listaPerfiles.addPerfil(perfil2);
+    public perfilesService(perfilesRepository repository){
+        this.repository = repository;
     }
 
-    public listaPerfiles getListaPerfiles(){
-        return this.listaPerfiles;
+    public List<Profile> getListaPerfiles(){
+        return this.repository.findAll();
     }
 
 }

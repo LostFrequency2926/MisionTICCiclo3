@@ -1,13 +1,13 @@
-package com.finalProjectMMisionTicCiclo3.webServer;
-
+package com.Ciclo3MisionTIC.Ciclo3MisionTIC;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WebServerApplication {
+public class App {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WebServerApplication.class, args);
+
+		SpringApplication.run(App.class, args);
 	}
 
 }

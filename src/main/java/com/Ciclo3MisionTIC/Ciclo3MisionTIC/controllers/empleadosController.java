@@ -1,21 +1,23 @@
 package com.Ciclo3MisionTIC.Ciclo3MisionTIC.controllers;
-import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.listaUsuarios;
+import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Empleado;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.services.empleadoService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-public class ConsultarListaUsuarios {
+public class empleadosController {
 
     empleadoService service;
 
-    public ConsultarListaUsuarios(){
-        this.service = new empleadoService();
+    public empleadosController(empleadoService service){
+        this.service = service;
     }
 
 
-    @GetMapping("/users")
-    public listaUsuarios ConsultarListaUsuarios(){
+    @GetMapping("/employees")
+    public List<Empleado> ConsultarListaUsuarios(){
         return this.service.getListaUsuarios();
     }
 

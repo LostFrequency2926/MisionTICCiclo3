@@ -1,28 +1,23 @@
 package com.Ciclo3MisionTIC.Ciclo3MisionTIC.services;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Empresa;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.listaEmpresas;
+import com.Ciclo3MisionTIC.Ciclo3MisionTIC.repositories.empresaRepository;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
+
+@Service
 public class empresaService {
 
-    Empresa empresa1;
-    Empresa empresa2;
-    listaEmpresas listadeEmpresas;
+    private empresaRepository repository;
 
-    public empresaService(){
-
-        this.empresa1 = new Empresa(1, "Andes", "900326590", "5537866", "km 2 Via el tambo", "Daniel", "none", LocalDate.now(),LocalDate.now());
-
-        this.empresa2 = new Empresa(1, "Andes", "900326590", "5537866", "km 2 Via el tambo", "Daniel", "none", LocalDate.now(),LocalDate.now());
-
-        this.listadeEmpresas = new listaEmpresas("Prueba de lista de empresas");
-
-        listadeEmpresas.addEmpresa(empresa1);
-        listadeEmpresas.addEmpresa(empresa2);
+    public empresaService(empresaRepository repository){
+        this.repository = repository;
     }
 
-    public listaEmpresas getListaEmpresas(){
-        return this.listadeEmpresas;
+    public List<Empresa> getListaEmpresas(){
+        return this.repository.findAll();
     }
 }

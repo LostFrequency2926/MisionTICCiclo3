@@ -1,19 +1,22 @@
 package com.Ciclo3MisionTIC.Ciclo3MisionTIC.controllers;
+import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Transaction;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.listaMovimientos;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.services.movimientoService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-public class ConsultarListaMovimientos {
+public class movimientosController {
     movimientoService service;
 
-    public ConsultarListaMovimientos(){
-        this.service = new movimientoService();
+    public movimientosController(movimientoService service){
+        this.service = service;
     }
 
     @GetMapping("/movements")
-    public listaMovimientos ConsultarListaMovimientos(){
+    public List<Transaction> ConsultarListaMovimientos(){
         return this.service.getListadeMovimientos();
     }
 

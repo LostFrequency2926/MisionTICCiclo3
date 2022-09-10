@@ -1,25 +1,21 @@
 package com.Ciclo3MisionTIC.Ciclo3MisionTIC.services;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.*;
+import com.Ciclo3MisionTIC.Ciclo3MisionTIC.repositories.movimientosRepository;
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
+import java.util.List;
 
+@Service
 public class movimientoService {
-    Transaction movimiento1;
-    Transaction movimiento2;
-    listaMovimientos listadeMovimientos;
 
-    public movimientoService(){
+    private movimientosRepository repository;
 
-        this.movimiento1 = new Transaction(1, "mail", 100, "nan", "Andes", LocalDate.now(),LocalDate.now() );
-        this.movimiento2 = new Transaction(1, "mail", 100, "nan", "Andes", LocalDate.now(),LocalDate.now() );
-
-        this.listadeMovimientos = new listaMovimientos("Prueba de lista de movimientos");
-
-        listadeMovimientos.addMovimiento(movimiento1);
-        listadeMovimientos.addMovimiento(movimiento2);
+    public movimientoService(movimientosRepository repository){
+        this.repository = repository;
     }
 
-    public listaMovimientos getListadeMovimientos(){
-
-        return this.listadeMovimientos;
+    public List<Transaction> getListadeMovimientos(){
+        return this.repository.findAll();
     }
 }
