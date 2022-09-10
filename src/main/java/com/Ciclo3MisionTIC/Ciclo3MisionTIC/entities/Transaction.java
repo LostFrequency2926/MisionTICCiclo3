@@ -3,8 +3,8 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "Transaction")
-public class MovimientoDinero {
+@Table(name="Transaction")
+public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,8 +16,8 @@ public class MovimientoDinero {
     @Column(name = "amount")
     private float amount;
 
-    @Column(name = "user")
-    private String user;
+    @Column(name = "userT")
+    private String userT;
 
     @Column(name = "enterprise")
     private String enterprise;
@@ -29,19 +29,17 @@ public class MovimientoDinero {
     private LocalDate createdAt;
 
 
-
-    public MovimientoDinero(long id_transaction, String concept, float amount, String user, String enterprise, LocalDate updatedAt, LocalDate createdAt) {
+    public Transaction(long id_transaction, String concept, float amount, String userT, String enterprise, LocalDate updatedAt, LocalDate createdAt) {
         this.id_transaction = id_transaction;
         this.concept = concept;
         this.amount = amount;
-        this.user = user;
+        this.userT = userT;
         this.enterprise = enterprise;
         this.updatedAt = updatedAt;
         this.createdAt = createdAt;
     }
 
-    //CONSTRUCTOR sin argumentos para poder castear la clase a una tabla
-    public MovimientoDinero() {
+    public Transaction() {
 
     }
 
@@ -69,12 +67,12 @@ public class MovimientoDinero {
         this.amount = amount;
     }
 
-    public String getUser() {
-        return user;
+    public String getUsuario() {
+        return userT;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUsuario(String usuario) {
+        this.userT = usuario;
     }
 
     public String getEnterprise() {
@@ -100,23 +98,7 @@ public class MovimientoDinero {
     public void setCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
     }
-
-    public static void main(String[] args) {
-
-        MovimientoDinero movimiento1 = new MovimientoDinero(1,"compra sillas",2000000, "Daniel", "AndesBPO", LocalDate.now(),LocalDate.now() );
-
-        System.out.println(movimiento1.getAmount());
-        movimiento1.setAmount(500000);
-        System.out.println(movimiento1.getAmount());
-
-        System.out.println(movimiento1.getConcept());
-        movimiento1.setConcept("Compra refrigerios");
-        System.out.println(movimiento1.getConcept());
-
-        System.out.println(movimiento1.getUser());
-        movimiento1.setUser("Karen");
-        System.out.println(movimiento1.getUser());
-    }
-
-
 }
+
+
+

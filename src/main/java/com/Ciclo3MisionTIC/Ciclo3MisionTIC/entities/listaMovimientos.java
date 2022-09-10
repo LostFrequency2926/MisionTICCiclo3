@@ -6,22 +6,22 @@ import java.util.List;
 public class listaMovimientos {
 
     private String name;
-    private List<MovimientoDinero> listadeMovimientos;
+    private List<Transaction> Transaction;
 
     public listaMovimientos(String name){
         this.setName(name);
-        this.listadeMovimientos = new ArrayList<MovimientoDinero>();
+        this.Transaction = new ArrayList<Transaction>();
     }
 
-    public void addMovimiento(MovimientoDinero movimiento){
+    public void addMovimiento(Transaction movimiento){
 
-        this.listadeMovimientos.add(movimiento);
+        this.Transaction.add(movimiento);
 
     }
 
-    public List<MovimientoDinero> getListaMovimientos(){
+    public List<Transaction> getListaMovimientos(){
 
-        return this.listadeMovimientos;
+        return this.Transaction;
     }
 
     public String getName() {

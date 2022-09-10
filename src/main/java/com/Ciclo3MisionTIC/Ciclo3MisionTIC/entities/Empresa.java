@@ -37,6 +37,10 @@ public class Empresa {
     @Column(name = "createdAt")
     private LocalDate createdAt;
 
+    public Empresa() {
+
+    }
+
     public Empresa(long id_empresa, String name, String document, String phone, String address, String users, String transactions, LocalDate updatedAt, LocalDate createdAt) {
         this.id_empresa = id_empresa;
         this.name = name;
@@ -47,10 +51,6 @@ public class Empresa {
         this.transactions = transactions;
         this.updatedAt = updatedAt;
         this.createdAt = createdAt;
-    }
-    //CONSTRUCTOR sin argumentos para poder castear la clase a una tabla
-    public Empresa() {
-
     }
 
     public long getId_empresa() {

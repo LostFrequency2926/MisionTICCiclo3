@@ -1,5 +1,4 @@
 package com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -33,8 +32,6 @@ public class Empleado {
     private LocalDate createdAt;
 
     //CONSTRUCTOR
-
-
     public Empleado(long id_empleado, String email, String profile, String role, String enterprise, String transactions, LocalDate updatedAt, LocalDate createdAt) {
         this.id_empleado = id_empleado;
         this.email = email;
