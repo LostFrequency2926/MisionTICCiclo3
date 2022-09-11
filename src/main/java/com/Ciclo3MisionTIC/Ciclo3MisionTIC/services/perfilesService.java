@@ -23,4 +23,13 @@ public class perfilesService {
         return this.repository.save(perfil);
     }
 
+    public void deleteProfile(Long id_profile) {
+        this.repository.deleteById(id_profile);
+    }
+
+    public void patchProfile(Profile profile,Long id_profile) {
+        this.repository.deleteById(id_profile);
+        this.repository.save(profile);
+    }
+
 }

@@ -3,10 +3,7 @@ import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Profile;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Transaction;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.listaPerfiles;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.services.perfilesService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,5 +24,15 @@ public class perfilesController {
     @PostMapping("/profiles")
     public Profile createProfile(@RequestBody Profile perfil){
         return this.service.createProfile(perfil);
+    }
+
+    @DeleteMapping("/profiles/{id}")
+    public void deleteProfile(@PathVariable(value = "id") Long profileId){
+        this.service.deleteProfile(profileId);
+    }
+
+    @PatchMapping("/profiles/{id}")
+    public void patchProfile(@RequestBody Profile perfil, @PathVariable(value = "id") Long profileId){
+        this.service.patchProfile(perfil, profileId);
     }
 }

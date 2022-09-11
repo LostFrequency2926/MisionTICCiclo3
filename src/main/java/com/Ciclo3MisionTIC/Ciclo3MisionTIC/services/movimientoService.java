@@ -22,4 +22,13 @@ public class movimientoService {
     public Transaction createTransaction(Transaction movimiento){
         return this.repository.save(movimiento);
     }
+
+    public void deleteMovement(Long id_movement) {
+        this.repository.deleteById(id_movement);
+    }
+
+    public void patchMovement(Transaction movimiento,Long id_movement) {
+        this.repository.deleteById(id_movement);
+        this.repository.save(movimiento);
+    }
 }
