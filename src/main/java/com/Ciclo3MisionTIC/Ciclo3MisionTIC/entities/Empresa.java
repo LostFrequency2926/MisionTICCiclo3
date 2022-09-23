@@ -1,11 +1,21 @@
 package com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "empresa")
 public class Empresa {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     String nombreEmpresa;
     String direccionEmpresa;
     int telefonoEmpresa;
     int nitEmpresa;
+
+    public Empresa() {
+    }
 
     public Empresa(String nombreEmpresa, String direccionEmpresa, int telefonoEmpresa, int nitEmpresa) {
         this.nombreEmpresa = nombreEmpresa;
