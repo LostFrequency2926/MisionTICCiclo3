@@ -43,9 +43,7 @@ public class Empleado {
         this.createdAt = createdAt;
     }
 
-    public Empleado() {
-
-    }
+    public Empleado() {}
 
     public long getId_empleado() {
         return id_empleado;

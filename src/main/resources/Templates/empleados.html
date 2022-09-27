@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Empleados</title>
+</head>
+<body>
+<main>
+
+    <div class="px-4 py-5 my-5 text-center">
+
+        <h1 class="display-5 fw-bold">Empleados Prima Radix</h1>
+
+
+        <div class="d-flex gap-4 justify-content-center">
+            <div th:each="Empleado : ${Empleados}" class="card" style="width: 18rem;">
+                <img src="img/employeeIcon.png" class="d-block mx-auto mb-4 py-1" height="60" alt="Icono usuario">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${Empleado.id_empleado}"></h5>
+                    <p class="card-text" th:text="${Empleado.email}"></p>
+                    <p class="card-text" th:text="${Empleado.enterprise}"></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <a href="/" class="btn btn-primary">Regresar</a>
+            <a href="employeesV2/new" type="button" class="btn btn-secondary">Crear Nuevo</a>
+        </div>
+
+
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
