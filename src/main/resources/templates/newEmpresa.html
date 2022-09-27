@@ -11,16 +11,16 @@
 <body>
 
 <div class="px-4 py-5 my-5 text-center d-flex flex-column align-items-center">
-    <form class="d-flex flex-column gap-3 align-items-center">
-        <input class="form-control" type="number" placeholder="id sede"/>
-        <input class="form-control" type="text" placeholder="direccion"/>
-        <input class="form-control" type="number" placeholder="document"/>
-        <input class="form-control" type="text" placeholder="nombre"/>
-        <input class="form-control" type="text" placeholder="telefono"/>
-        <input class="form-control" type="text" placeholder="transacciones"/>
-        <input class="form-control" type="date" placeholder="fecha creacion"/>
-        <input class="form-control" type="text" placeholder="usuarios"/>
-        <input class="form-control" type="date" placeholder="fecha actualizacion"/>
+    <form th:object="${empresaNueva}" class="d-flex flex-column gap-3 align-items-center">
+        <input th:field="*{id_empresa}" class="form-control" type="number" placeholder="id sede"/>
+        <input th:field="*{address}" class="form-control" type="text" placeholder="direccion"/>
+        <input th:field="*{document}" class="form-control" type="number" placeholder="documento"/>
+        <input th:field="*{name}" class="form-control" type="text" placeholder="nombre"/>
+        <input th:field="*{phone}" class="form-control" type="text" placeholder="telefono"/>
+        <input th:field="*{transactions}" class="form-control" type="text" placeholder="transacciones"/>
+        <input th:field="*{createdAt}" class="form-control" type="date" placeholder="fecha creacion"/>
+        <input th:field="*{users}" class="form-control" type="text" placeholder="usuarios"/>
+        <input th:field="*{updatedAt}" class="form-control" type="date" placeholder="fecha actualizacion"/>
 
         <div>
             <button class="btn btn-primary">Crear</button>

@@ -24,7 +24,7 @@ public class movimientosControllerV2 {
 
     @GetMapping("/movementsV2/new")
     public String newMovimiento(Model model){
-        model.addAttribute("Movimiento", new Transaction());
+        model.addAttribute("movimientoNuevo", new Transaction());
         return "newMovimiento";
     }
 }

@@ -27,7 +27,7 @@ public class empresaControllerV2 {
 
     @GetMapping("/enterprisesV2/new")
     public String newEmpresa(Model model){
-        model.addAttribute("Empresa", new Empresa());
+        model.addAttribute("empresaNueva", new Empresa());
         return "newEmpresa";
     }
 }

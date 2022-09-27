@@ -1,6 +1,8 @@
 package com.Ciclo3MisionTIC.Ciclo3MisionTIC.controllers;
+import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Empleado;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.services.empleadoService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -16,4 +18,7 @@ public class FrontEndController {
     public String index(){
         return "index";
     }
+
+
+
 }

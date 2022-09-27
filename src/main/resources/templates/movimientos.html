@@ -20,6 +20,7 @@
 
         <div class="d-flex gap-4 justify-content-center">
             <div th:each="Movimiento : ${Movimientos}" class="card" style="width: 18rem;">
+
                 <div th:if="${Movimiento.amount} > 0 ">
                     <img src="img/ingresoMovement.png" class="d-block mx-auto mb-4 py-2" height="60" alt="ingreso">
                 </div>

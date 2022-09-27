@@ -19,12 +19,12 @@ public class empleadosControllerV2 {
     public String Empleados(Model model){
         List<Empleado> Empleados = this.serviceEmpleado.getListaUsuarios();
         model.addAttribute("Empleados", Empleados);
-        return "Empleados";
+        return "empleados";
     }
 
     @GetMapping("/employeesV2/new")
-    public String newEmpleado(Model model){
-        model.addAttribute(new Empleado());
+    public String new_Empleado(Model model){
+        model.addAttribute("empleadoNuevo", new Empleado());
         return "newEmpleado";
     }
 }

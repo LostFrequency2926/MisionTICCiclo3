@@ -11,14 +11,14 @@
 <body>
 
 <div class="px-4 py-5 my-5 text-center d-flex flex-column align-items-center">
-    <form class="d-flex flex-column gap-3 align-items-center">
-        <input class="form-control" type="number" placeholder="id movimiento"/>
-        <input class="form-control" type="number" placeholder="cantidad"/>
-        <input class="form-control" type="text" placeholder="concepto"/>
-        <input class="form-control" type="text" placeholder="Sede"/>
-        <input class="form-control" type="text" placeholder="usuario"/>
-        <input class="form-control" type="date" placeholder="fecha creacion"/>
-        <input class="form-control" type="date" placeholder="fecha actualizacion"/>
+    <form th:object="${movimientoNuevo}" class="d-flex flex-column gap-3 align-items-center">
+        <input th:field="*{id_transaction}" class="form-control" type="number" placeholder="id movimiento"/>
+        <input th:field="*{amount}" class="form-control" type="number" placeholder="cantidad"/>
+        <input th:field="*{concept}" class="form-control" type="text" placeholder="concepto"/>
+        <input th:field="*{enterprise}" class="form-control" type="text" placeholder="Sede"/>
+        <input th:field="*{usuario}" class="form-control" type="text" placeholder="usuario"/>
+        <input th:field="*{createdAt}" class="form-control" type="date" placeholder="fecha creacion"/>
+        <input th:field="*{updatedAt}" class="form-control" type="date" placeholder="fecha actualizacion"/>
 
         <div>
             <button class="btn btn-primary">Registrar</button>

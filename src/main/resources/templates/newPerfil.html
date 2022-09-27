@@ -12,14 +12,13 @@
 
 <div class="container bg-success rounded " style="width: 400px"  >
 <div class="px-4 py-5 my-5 text-center d-flex flex-column align-items-center">
-    <form class="d-flex flex-column gap-3 align-items-center">
-        <input class="form-control" type="number" placeholder="id perfil"/>
-        <input class="form-control" type="text" placeholder="imagen"/>
-        <input class="form-control" type="text" placeholder="telefono"/>
-        <input class="form-control" type="text" placeholder="usuario"/>
-        <input class="form-control" type="date" placeholder="fecha creacion"/>
-        <input class="form-control" type="date" placeholder="fecha actualizacion"/>
-
+    <form th:object="${perfilNuevo}" class="d-flex flex-column gap-3 align-items-center">
+        <input th:field="*{id_profile}" class="form-control" type="number" placeholder="id perfil"/>
+        <input th:field="*{image}" class="form-control" type="text" placeholder="imagen"/>
+        <input th:field="*{phone}" class="form-control" type="text" placeholder="telefono"/>
+        <input th:field="*{user}" class="form-control" type="text" placeholder="usuario">
+        <input th:field="*{createdAt}" class="form-control" type="date" placeholder="fecha creacion"/>
+        <input th:field="*{updatedAt}" class="form-control" type="date" placeholder="fecha actualizacion"/>
         <div>
             <button class="btn btn-primary">Crear</button>
             <a href="/profilesV2" class="btn btn-secondary">Cancelar</a>

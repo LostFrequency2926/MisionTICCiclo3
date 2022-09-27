@@ -11,15 +11,15 @@
 <body>
 
 <div class="px-4 py-5 my-5 text-center d-flex flex-column align-items-center">
-    <form class="d-flex flex-column gap-3 align-items-center">
-        <input class="form-control" type="number" placeholder="id empleado"/>
-        <input class="form-control" type="text" placeholder="email"/>
-        <input class="form-control" type="text" placeholder="perfil"/>
-        <input class="form-control" type="text" placeholder="rol"/>
-        <input class="form-control" type="text" placeholder="Sede"/>
-        <input class="form-control" type="text" placeholder="transacciones"/>
-        <input class="form-control" type="date" placeholder="fecha creacion"/>
-        <input class="form-control" type="date" placeholder="fecha actualizacion"/>
+    <form th:object="${empleadoNuevo}" class="d-flex flex-column gap-3 align-items-center" method="post">
+        <input class="form-control" placeholder="id empleado" th:field="*{id_empleado}" type="number"/>
+        <input th:field="*{email}" class="form-control" type="text" placeholder="email"/>
+        <input th:field="*{profile}" class="form-control" type="text" placeholder="perfil"/>
+        <input th:field="*{role}" class="form-control" type="text" placeholder="rol"/>
+        <input th:field="*{enterprise}" class="form-control" type="text" placeholder="Sede"/>
+        <input th:field="*{transactions}" class="form-control" type="text" placeholder="transacciones"/>
+        <input th:field="*{createdAt}" class="form-control" type="date" />
+        <input th:field="*{updatedAt}" class="form-control" type="date" />
 
         <div>
             <button class="btn btn-primary">Crear</button>

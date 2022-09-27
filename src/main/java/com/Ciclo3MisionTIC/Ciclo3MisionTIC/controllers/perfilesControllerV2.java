@@ -24,7 +24,7 @@ public class perfilesControllerV2 {
 
     @GetMapping("/profilesV2/new")
     public String newPerfiles(Model model){
-        model.addAttribute("Perfiles", new Profile());
+        model.addAttribute("perfilNuevo", new Profile());
         return "newPerfil";
     }
 
