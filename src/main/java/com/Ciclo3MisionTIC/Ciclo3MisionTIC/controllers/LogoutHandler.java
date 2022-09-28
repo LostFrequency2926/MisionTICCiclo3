@@ -1,5 +1,4 @@
 package com.Ciclo3MisionTIC.Ciclo3MisionTIC.controllers;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.client.registration.ClientRegistration;
@@ -18,7 +17,6 @@ import java.io.IOException;
  */
 @Controller
 public class LogoutHandler extends SecurityContextLogoutHandler {
-
     private final ClientRegistrationRepository clientRegistrationRepository;
 
     /**
