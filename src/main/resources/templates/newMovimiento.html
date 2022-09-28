@@ -11,7 +11,7 @@
 <body>
 
 <div class="px-4 py-5 my-5 text-center d-flex flex-column align-items-center">
-    <form th:object="${movimientoNuevo}" class="d-flex flex-column gap-3 align-items-center">
+    <form th:object="${movimientoNuevo}" th:action="@{/movements}" method="post" class="d-flex flex-column gap-3 align-items-center">
         <input th:field="*{id_transaction}" class="form-control" type="number" placeholder="id movimiento"/>
         <input th:field="*{amount}" class="form-control" type="number" placeholder="cantidad"/>
         <input th:field="*{concept}" class="form-control" type="text" placeholder="concepto"/>

@@ -11,7 +11,7 @@
 <body>
 
 <div class="px-4 py-5 my-5 text-center d-flex flex-column align-items-center">
-    <form th:object="${empresaNueva}" class="d-flex flex-column gap-3 align-items-center">
+    <form th:object="${empresaNueva}" th:action="@{/enterprises}" method="post" class="d-flex flex-column gap-3 align-items-center">
         <input th:field="*{id_empresa}" class="form-control" type="number" placeholder="id sede"/>
         <input th:field="*{address}" class="form-control" type="text" placeholder="direccion"/>
         <input th:field="*{document}" class="form-control" type="number" placeholder="documento"/>

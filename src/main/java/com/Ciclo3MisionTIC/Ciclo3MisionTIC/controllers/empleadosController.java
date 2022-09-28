@@ -2,7 +2,10 @@ package com.Ciclo3MisionTIC.Ciclo3MisionTIC.controllers;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Empleado;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Empresa;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.services.empleadoService;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -22,8 +25,10 @@ public class empleadosController {
     }
 
     @PostMapping("/employees")
-    public Empleado createEmpleado(@RequestBody Empleado empleado){
-        return this.service.createEmployee(empleado);
+    public RedirectView createEmpleado(@ModelAttribute @DateTimeFormat(pattern = "YYYY-MM-DD") Empleado empleado, Model model){
+        model.addAttribute(empleado);
+        this.service.createEmployee(empleado);
+        return new RedirectView("employeesV2");
     }
 
     @GetMapping("/employees/{id}")
@@ -32,8 +37,9 @@ public class empleadosController {
     }
 
     @DeleteMapping("/employees/{id}")
-    public void deleteEmployees(@PathVariable(value = "id") Long profileId){
+    public RedirectView deleteEmployees(@PathVariable(value = "id") Long profileId){
         this.service.deleteEmployees(profileId);
+        return new RedirectView("/employeesV2");
     }
 
     @PatchMapping("/employees/{id}")

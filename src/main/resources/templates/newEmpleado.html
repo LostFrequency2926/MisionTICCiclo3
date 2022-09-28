@@ -11,8 +11,8 @@
 <body>
 
 <div class="px-4 py-5 my-5 text-center d-flex flex-column align-items-center">
-    <form th:object="${empleadoNuevo}" class="d-flex flex-column gap-3 align-items-center" method="post">
-        <input class="form-control" placeholder="id empleado" th:field="*{id_empleado}" type="number"/>
+    <form th:object="${empleadoNuevo}" th:action="@{/employees}" class="d-flex flex-column gap-3 align-items-center" method="post">
+        <input th:field="*{id_empleado}" class="form-control" placeholder="id empleado"  type="number"/>
         <input th:field="*{email}" class="form-control" type="text" placeholder="email"/>
         <input th:field="*{profile}" class="form-control" type="text" placeholder="perfil"/>
         <input th:field="*{role}" class="form-control" type="text" placeholder="rol"/>

@@ -1,11 +1,12 @@
 package com.Ciclo3MisionTIC.Ciclo3MisionTIC.controllers;
-import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Empleado;
-import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Empresa;
-import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.Transaction;
-import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.listaEmpresas;
+import com.Ciclo3MisionTIC.Ciclo3MisionTIC.entities.*;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.services.empresaService;
 import com.Ciclo3MisionTIC.Ciclo3MisionTIC.services.movimientoService;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
+
 import java.util.List;
 
 
@@ -32,13 +33,20 @@ public class empresaController {
     }
 
     @PostMapping("/enterprises")
-    public Empresa createEnterprise(@RequestBody Empresa empresa){
-        return this.service.createEnterprise(empresa);
+    //public Empresa createEnterprise(@RequestBody Empresa empresa){
+    //    return this.service.createEnterprise(empresa);
+    //}
+    public RedirectView createEnterprises(@ModelAttribute @DateTimeFormat(pattern = "YYYY-MM-DD") Empresa empresa, Model model){
+        model.addAttribute(empresa);
+        this.service.createEnterprise(empresa);
+
+        return new RedirectView("/enterprisesV2");
     }
 
     @DeleteMapping("/enterprises/{id}")
-    public void deleteEnterprises(@PathVariable(value = "id") Long profileId){
+    public RedirectView deleteEnterprises(@PathVariable(value = "id") Long profileId){
         this.service.deleteEnterprises(profileId);
+        return new RedirectView("/enterprisesV2");
     }
 
 

@@ -8,7 +8,7 @@ public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id_transaction;
+    public long id_transaction;
 
     @Column(name = "concept")
     private String concept;

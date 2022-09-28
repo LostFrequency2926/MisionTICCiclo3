@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" >
     <title>Document</title>
 </head>
 <body>
@@ -19,11 +19,18 @@
             <p class="lead mb-4">!Bienvenido¡ Este es el sistema de gestion de sedes, empleados y movimientos financieros del vivero Prima Radix</p>
             <p class="lead mb-4">¿A que modulo quieres ingresar el dia de hoy?</p>
 
+            <div sec:authorize="!isAuthenticated()" >
+                <a type="button" class="btn btn-success" th:href="@{/oauth2/authorization/auth0}">Identificarse</a>
+            </div>
+
+            <div sec:authorize="isAuthenticated()">
+                <h3 th:text="'Bienvenido de nuevo ' + ${perfil.getName()}" ></h3>
             <div class="btn-group" role="group" aria-label="Basic example">
                 <a href="employeesV2" type="button" class="btn btn-primary">Empleados</a>
-                <a href="enterprisesV2" type="button" class="btn btn-primary">Sedes</a>
-                <a href="movementsV2" type="button" class="btn btn-primary">Movimientos</a>
-                <a href="profilesV2" type="button" class="btn btn-primary">Perfiles</a>
+                <a href="enterprisesV2" class="btn btn-primary">Sedes</a>
+                <a href="movementsV2" class="btn btn-primary">Movimientos</a>
+                <a href="profilesV2" class="btn btn-primary">Perfiles</a>
+            </div>
             </div>
         </div>
     </div>

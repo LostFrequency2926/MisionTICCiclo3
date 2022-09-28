@@ -22,14 +22,26 @@
                     <h5 class="card-title" th:text="${Empleado.id_empleado}"></h5>
                     <p class="card-text" th:text="${Empleado.email}"></p>
                     <p class="card-text" th:text="${Empleado.enterprise}"></p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+                    <div th:if="${perfilAdm.administrador} == true" class="btn-group" role="group" aria-label="Basic example">
+                        <div class="d-grid gap-2 d-md-block justify-content-sm-center mx-2">
+                            <form th:action="@{/employees/{id}(id=${Empleado.id_empleado})}" th:method="patch" >
+                                <button type="submit" class="btn btn-primary">Editar</button>
+                            </form>
+                        </div>
+                        <div class="d-grid gap-2 d-md-block justify-content-sm-center mx-2">
+                            <form th:action="@{/employees/{id}(id=${Empleado.id_empleado})}" th:method="delete" >
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="mt-4">
-            <a href="/" class="btn btn-primary">Regresar</a>
-            <a href="employeesV2/new" type="button" class="btn btn-secondary">Crear Nuevo</a>
+            <a th:if="${perfilAdm.administrador} == true" href="employeesV2/new" type="button" class="btn btn-primary">Crear Nuevo</a>
+            <a href="/" class="btn btn-secondary">Regresar</a>
         </div>
 
 

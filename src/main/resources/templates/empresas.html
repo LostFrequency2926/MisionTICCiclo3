@@ -24,14 +24,27 @@
                     <p class="card-text" th:text="${Empresa.name}"></p>
                     <p class="card-text" th:text="${Empresa.address}"></p>
                     <p class="card-text" th:text="${Empresa.phone}"></p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+                    <div th:if="${perfilAdm.administrador} == true" class="btn-group" role="group" aria-label="Basic example">
+                    <div class="d-grid gap-2 d-md-block justify-content-sm-center mx-2">
+                        <form th:action="@{/enterprises/{id}(id=${Empresa.id_empresa})}" th:method="patch" >
+                            <button type="submit" class="btn btn-primary">Editar</button>
+                        </form>
+                    </div>
+                    <div class="d-grid gap-2 d-md-block justify-content-sm-center mx-2">
+                        <form th:action="@{/enterprises/{id}(id=${Empresa.id_empresa})}" th:method="delete" >
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </div>
+                    </div>
+
                 </div>
             </div>
         </div>
         <div class="mt-4">
-            <a href="/" class="btn btn-primary">Regresar</a>
-            <a href="enterprisesV2/new" type="button" class="btn btn-secondary">Crear Sede</a>
-        </div>
+            <a th:if="${perfilAdm.administrador} == true" href="enterprisesV2/new" type="button" class="btn btn-primary">Crear Sede</a>
+            <a href="/" class="btn btn-secondary">Regresar</a>
+                    </div>
     </div>
 
 </main>

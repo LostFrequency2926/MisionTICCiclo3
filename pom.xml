@@ -45,6 +45,16 @@
 			<artifactId>spring-boot-starter-jersey</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-oauth2-client</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -143,13 +153,20 @@
 						<version>${vaadin.version}</version>
 						<executions>
 							<execution>
-								<id>frontend</id>
-								<phase>compile</phase>
 								<goals>
 									<goal>prepare-frontend</goal>
 									<goal>build-frontend</goal>
+									<goal>build-info</goal>
 								</goals>
+								<id>frontend</id>
+								<phase>compile</phase>
 								<configuration>
+									<additional.Properties>
+										<encoding.source>${project.build.sourceEncoding}</encoding.source>
+										<encoding.reporting>${project.reporting.outputEncoding}</encoding.reporting>
+										<java.source>${maven.compiler.source}</java.source>
+										<java.target>${maven.compiler.target}</java.target>
+									</additional.Properties>
 									<productionMode>true</productionMode>
 								</configuration>
 							</execution>
