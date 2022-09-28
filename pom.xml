@@ -121,6 +121,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -138,6 +139,21 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>build-info</goal>
+						</goals>
+						<configuration>
+							<additionalProperties>
+								<encoding.source>${project.build.sourceEncoding}</encoding.source>
+								<encoding.reporting>${project.reporting.outputEncoding}</encoding.reporting>
+								<java.source>${maven.compiler.source}</java.source>
+								<java.target>${maven.compiler.target}</java.target>
+							</additionalProperties>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -149,24 +165,15 @@
 				<plugins>
 					<plugin>
 						<groupId>com.vaadin</groupId>
-						<artifactId>vaadin-maven-plugin</artifactId>
-						<version>${vaadin.version}</version>
 						<executions>
 							<execution>
+								<id>frontend</id>
+								<phase>compile</phase>
 								<goals>
 									<goal>prepare-frontend</goal>
 									<goal>build-frontend</goal>
-									<goal>build-info</goal>
 								</goals>
-								<id>frontend</id>
-								<phase>compile</phase>
 								<configuration>
-									<additional.Properties>
-										<encoding.source>${project.build.sourceEncoding}</encoding.source>
-										<encoding.reporting>${project.reporting.outputEncoding}</encoding.reporting>
-										<java.source>${maven.compiler.source}</java.source>
-										<java.target>${maven.compiler.target}</java.target>
-									</additional.Properties>
 									<productionMode>true</productionMode>
 								</configuration>
 							</execution>
