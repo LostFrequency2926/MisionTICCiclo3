@@ -30,6 +30,9 @@
                 <a href="enterprisesV2" class="btn btn-primary">Sedes</a>
                 <a href="movementsV2" class="btn btn-primary">Movimientos</a>
                 <a href="profilesV2" class="btn btn-primary">Perfiles</a>
+                <div sec:authorize="isAuthenticated()">
+                    <a class="btn btn-danger" th:href="@{/logout}">Salir</a>
+                </div>
             </div>
             </div>
         </div>
